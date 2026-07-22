@@ -6,7 +6,7 @@ body {
 }
 
 h2 {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   border-bottom: 1px solid #dee2e6;
   padding-bottom: 0.4rem;
   font-weight: 600;
@@ -20,21 +20,37 @@ li {
   margin-bottom: 0.8rem;
 }
 
-/* ヘッダー画像と文字のデザイン設定 */
+/* --------------------------------------------------
+ * Google Sites 完全再元：パララックス全幅ヘッダー
+ * -------------------------------------------------- */
 .hero-header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('header.png');
+  /* 画面幅全体（左右のカード制限を突破して100%表示） */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: -1rem; /* Quartoデフォルトの上部余白を相殺 */
+  margin-bottom: 3rem;
+
+  /* 背景画像の設定とパララックス（スクロール固定）効果 */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('header.png');
   background-size: cover;
   background-position: center;
-  min-height: 250px; /* 画像の高さを確保 */
+  background-attachment: fixed; /* GS特有のスクロール時に画像が連動する効果 */
+
+  /* ヘッダーの高さと上下中央揃え */
+  height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
 }
 
 .hero-title {
   color: #ffffff !important;
-  font-size: 2.8rem;
+  font-size: 3.2rem;
   font-weight: 700;
   letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* 文字の視認性を上げる微細な影 */
 }
