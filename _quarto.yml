@@ -1,16 +1,12 @@
 project:
   type: website
-  output-dir: _site
 
 website:
-  title: "Yojiro Ito"
-  navbar:
-    right:
-      - text: "Home"
-        href: index.qmd
+  title: "website"
 
 format:
   html:
     theme: cosmo
     css: styles.css
-    toc: false
+    resources:
+      - "header.png"
