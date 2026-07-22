@@ -6,34 +6,38 @@ body {
   font-size: 15px;
 }
 
-/* 本文全体の左右余白と最大幅の調整（GSのようなスッキリした幅にする） */
-main.content {
-  max-width: 800px !important;
-  margin: 0 auto;
+/* --------------------------------------------------
+ * 1. 本文横幅の制限解除（改行過多を解消してGSの広い幅にする）
+ * -------------------------------------------------- */
+div#quarto-content,
+main.content,
+.page-columns .content,
+.container-fluid {
+  max-width: 1100px !important;
+  width: 92% !important;
+  margin: 0 auto !important;
 }
 
 /* --------------------------------------------------
- * 1. 縦幅・横幅の広いパララックスヘッダー（GS完全再現）
+ * 2. 縦長で迫力のある全幅パララックスヘッダー
  * -------------------------------------------------- */
 .hero-header {
-  /* 本文コンテナの制限を無視して画面横幅100%（全幅）へ広げる */
   width: 100vw !important;
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  margin-top: -5rem !important; /* Quarto上部の余白を相殺 */
+  margin-top: -5rem !important;
   margin-bottom: 2.5rem;
 
-  /* 縦の高さを十分に広げる（GSの迫力ある縦幅を再現） */
-  height: 420px;
+  /* ヘッダーの縦幅をさらに長く（550px）設定 */
+  height: 550px;
 
-  /* 背景画像とスクロール連動（パララックス効果） */
   background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('header.png');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* GS特有のスクロール固定効果 */
+  background-attachment: fixed;
 
   display: flex;
   align-items: center;
@@ -42,16 +46,15 @@ main.content {
 
 .hero-title {
   color: #ffffff !important;
-  font-size: 3.2rem;
+  font-size: 3.5rem;
   font-weight: 700;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 /* --------------------------------------------------
- * 2. GS風のシンプルな見出し・リスト設定
+ * 3. GS風のシンプルな見出し・レイアウト・青リンク
  * -------------------------------------------------- */
-/* 余計な下線や巨大化をなくし、GSのシンプルな見出しを再現 */
 .gs-heading {
   font-size: 1.1rem;
   font-weight: 700;
@@ -70,12 +73,12 @@ li {
   line-height: 1.6;
 }
 
-/* リンクをGSのような綺麗な青色にする */
 a {
   color: #1a73e8;
-  text-decoration: underline;
+  text-decoration: none; /* GSと同様に普段は下線なし */
 }
 
 a:hover {
   color: #1557b0;
+  text-decoration: underline; /* マウスを乗せた時だけ下線 */
 }
