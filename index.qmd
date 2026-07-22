@@ -17,8 +17,8 @@ You can view my [CV](cv.pdf) here.
 Publications:
 :::
 
-* [Active but Hasty? CEO age, ownership structure, and the quantity–quality trade-off in investment](https://doi.org/10.1016/j.frl.2026.110499) (with Daisuke Miyakawa), *Finance Research Letters*, Vol. 109, 110499, 2026.
-* [The Impact of Mergers on Aggregate Productivity: An Empirical Analysis Using Productivity Decomposition](https://doi.org/10.1093/icc/dtaf032) (with Daisuke Miyakawa), *Industrial and Corporate Change*, Advance Article, 2025.
+* [Active but Hasty? CEO Age, Ownership Structure, and the Quantity–Quality Trade-off in Investment](https://doi.org/10.1016/j.frl.2026.110499) (with Daisuke Miyakawa), *Finance Research Letters*, Vol. 109, 110499, 2026.
+* [The Impact of Mergers on Aggregate Productivity: An Empirical Analysis Using Productivity Decomposition](https://doi.org/10.1093/icc/dtaf032) (with Daisuke Miyakawa), *Industrial and Corporate Change*, Vol. 35, No. 3, pp. 543–578, 2026.
 
 ::: {.gs-heading}
 Working Papers:
@@ -35,9 +35,12 @@ Working Papers:
 Works in Progress:
 :::
 
-* Managing Across Firms: Span of Control in CEO-Firm Networks
-* Importing Shortages, Exporting Inflation: Evidence from Shipment-Level Trade Data
-* Merger Patterns, Costly Exit, and Aggregate Implications. [Presented at: Japanese Economic Association Spring Meeting 2025.]{.gs-venues}
+* Merger Patterns, Costly Exit, and Aggregate Implications [Presented at: Japanese Economic Association Spring Meeting 2025.]{.gs-venues}
+* Managing Across Firms: Span of Control in CEO-Firm Networks (with Daisuke Miyakawa)
+* Importing Shortages, Exporting Inflation: Evidence from Shipment-Level Trade Data (with Daisuke Miyakawa)
+* Employment Protection and the Direction of Innovation (with Mitsuru Katagiri and Koki Oikawa)
+* Price Rigidity or Cost Dormancy? Firm-Level Evidence on the Phillips Curve
+* A Global Panel of Trade Elasticities: Product-Level Estimates from Supply Shifters
 
 ```{=html}
 <script>
