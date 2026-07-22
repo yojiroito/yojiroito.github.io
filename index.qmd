@@ -1,6 +1,10 @@
 ---
-title: "Yojiro Ito"
+title: ""
 ---
+
+::: {.hero-header}
+[Yojiro Ito]{.hero-title}
+:::
 
 I am an economist at the Bank of Japan and a Ph.D. student at Waseda University.
 
