@@ -1,40 +1,49 @@
 /* ==========================================================
    Google Sites (sites.google.com/view/yojiroito) 再現用スタイル
-   Quarto + Bootstrap(cosmo) の既定値を上書きする構成
    ---------------------------------------------------------
-   数値はすべて :root の変数で一元管理しています。
-   微調整はこのブロックだけを触れば済みます。
+   ★ DevTools による実測値を反映した版
+      - font-family : Lato
+      - font-size   : 11pt (= 14.6667px)
+      - line-height : 1.6667
+      - color       : #212121
+      - link        : #006580 + 常時下線
+      - list        : square マーカー / margin-left 15pt
    ========================================================== */
 
 :root {
-  /* --- タイポグラフィ（Google Sites 既定テーマ = Roboto） --- */
-  --gs-font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  /* --- タイポグラフィ（実測値） --- */
+  --gs-font: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI",
              "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
-  --gs-text: #212121;            /* Sites 本文色 rgba(0,0,0,.87) 相当 */
-  --gs-body-size: 16px;
-  --gs-body-line: 1.6;
+  --gs-text: #212121;
+  --gs-body-size: 11pt;          /* = 14.6667px */
+  --gs-body-line: 1.6667;
+  --gs-para-gap: 12px;           /* 段落の margin-top */
 
-  /* --- リンク（Google Docs / Sites 系の標準ブルー） --- */
-  --gs-link: #1155cc;
-  --gs-link-hover: #0b3d91;
+  /* --- リンク（実測値） --- */
+  --gs-link: #006580;
+
+  /* --- リスト（実測値） --- */
+  --gs-li-indent: 15pt;          /* = 20px */
 
   /* --- 本文カラム --- */
-  --content-max: 1080px;         /* ← 広げたい／狭めたいときはここ */
+  /* ※ここだけ未実測。元サイトを最大化して Layout タブで測った値に置換してください */
+  --content-max: 1080px;
   --content-pad: 24px;
 
   /* --- ヒーローヘッダー --- */
-  --hero-height: 520px;          /* PC での高さ */
-  --hero-height-sp: 320px;       /* スマホでの高さ */
-  --hero-parallax: 120px;        /* パララックスの可動幅（上下バッファ） */
-  --hero-overlay: rgba(0, 0, 0, 0.18);
-  --hero-focus: 50% 45%;         /* 背景画像のトリミング基準点 */
+  --hero-height: 520px;          /* 実測値 */
+  --hero-height-sp: 320px;
+  --hero-parallax: 120px;
+  --hero-overlay: rgba(0, 0, 0, 0.10);   /* 元サイトはほぼ素の画像 */
+  --hero-focus: 50% 45%;
+  --hero-title-size: 40px;       /* ※画像からの推定。実測したら置換 */
+  --hero-title-weight: 700;      /* ※同上 */
 }
 
 /* ==========================================================
    0. Quarto / Bootstrap の既定パーツを無効化
    ========================================================== */
 
-/* ナビバー・タイトルブロック・TOC・フッターを消して1枚ページ化 */
 #quarto-header,
 .navbar,
 #title-block-header,
@@ -47,7 +56,6 @@
   display: none !important;
 }
 
-/* ヒーローを画面最上部に密着させるため、上余白を全て除去 */
 #quarto-content,
 main.content,
 #quarto-document-content {
@@ -70,12 +78,13 @@ body {
   font-size: var(--gs-body-size);
   line-height: var(--gs-body-line);
   color: var(--gs-text);
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   background: #ffffff;
 }
 
 /* ==========================================================
-   2. 本文カラム幅（Quarto の狭いグリッド制限を解除）
+   2. 本文カラム幅
    ========================================================== */
 
 main.content,
@@ -87,21 +96,23 @@ main.content,
   padding-left: var(--content-pad);
   padding-right: var(--content-pad);
   padding-bottom: 5rem;
+  word-wrap: break-word;          /* 元サイト .mGzaTb と同じ */
 }
 
-/* Bootstrap のグリッド由来の余白をリセット */
 .page-columns,
 .page-columns > * {
   max-width: none;
 }
 
+/* 段落間隔（元サイトは margin-top: 12px） */
 main.content > p {
-  margin-bottom: 1rem;
+  margin-top: var(--gs-para-gap);
+  margin-bottom: 0;
   max-width: 100%;
 }
 
 /* ==========================================================
-   3. ヒーローヘッダー（全幅 + 真パララックス）
+   3. ヒーローヘッダー（全幅 + パララックス）
    ========================================================== */
 
 .hero-header {
@@ -110,15 +121,15 @@ main.content > p {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   height: var(--hero-height);
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1b2733;   /* 画像が出ない場合のフォールバック */
+  background-color: #1b2733;      /* 画像が出ない場合のフォールバック */
 }
 
-/* 第1層:動く背景 */
+/* 第1層：動く背景 */
 .hero-bg {
   position: absolute;
   left: 0;
@@ -134,7 +145,7 @@ main.content > p {
   z-index: 0;
 }
 
-/* 第2層:暗幕(フラットに変更。グラデーションをやめて明るく) */
+/* 第2層：暗幕（フラット・薄め） */
 .hero-header::after {
   content: "";
   position: absolute;
@@ -144,7 +155,7 @@ main.content > p {
   pointer-events: none;
 }
 
-/* 第3層:文字。必ず最前面 */
+/* 第3層：文字（必ず最前面） */
 .hero-inner {
   position: relative;
   z-index: 2;
@@ -157,76 +168,81 @@ main.content > p {
   margin: 0;
   color: #ffffff !important;
   font-family: var(--gs-font);
-  font-size: clamp(2.1rem, 5.5vw, 3.4rem);
-  font-weight: 400;
-  letter-spacing: 0.02em;
+  font-size: var(--hero-title-size);
+  font-weight: var(--hero-title-weight);
+  letter-spacing: 0.01em;
   line-height: 1.2;
   border: none;
-  /* 暗幕を薄くしたぶん、影を強めて可読性を確保 */
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55), 0 0 4px rgba(0, 0, 0, 0.4);
 }
 
 /* ==========================================================
    4. 見出し（Publications: など）
+   ---------------------------------------------------------
+   ★元サイトでは「太字ではない、本文と同じ書式の段落」でした。
+     太字のほうが読みやすいと感じる場合は、下のコメントを
+     外して font-weight: 700 を有効にしてください。
    ========================================================== */
 
 .gs-heading {
   font-family: var(--gs-font);
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.4;
+  font-size: var(--gs-body-size);
+  font-weight: 400;
+  /* font-weight: 700; */        /* ← 太字にしたい場合はここを有効化 */
+  line-height: var(--gs-body-line);
   color: var(--gs-text);
-  margin: 2.25rem 0 0.5rem;
+  margin: 60px 0 0;              /* 元サイトの空段落ぶんの間隔 */
   padding: 0;
-  border: none;                /* Bootstrap の h2 下線対策 */
+  border: none;
   text-decoration: none;
 }
 
-/* Quarto が見出しに付ける「#」アンカーを非表示 */
+.gs-heading p {
+  margin: 0;
+}
+
 .anchorjs-link {
   display: none !important;
 }
 
 /* ==========================================================
-   5. 論文リスト
+   5. 論文リスト（実測：square マーカー / margin-left 15pt）
    ========================================================== */
 
 main.content ul {
-  padding-left: 1.4rem;
-  margin: 0.4rem 0 0;
-  list-style: disc;
+  list-style-type: square;
+  margin: 0;
+  padding: 0;
 }
 
 main.content li {
-  margin-bottom: 0.9rem;
-  line-height: 1.6;
+  margin-left: var(--gs-li-indent);
+  margin-top: var(--gs-para-gap);
+  line-height: var(--gs-body-line);
   font-size: var(--gs-body-size);
 }
 
-main.content li::marker {
-  color: #5f6368;
+main.content li p {
+  margin: 0;
 }
 
-/* 誌名の斜体を Sites と同じ控えめな見え方に */
 main.content li em {
   font-style: italic;
 }
 
 /* ==========================================================
-   6. リンク
+   6. リンク（実測：#006580 / 常時下線 / ホバー変化なし）
    ========================================================== */
 
 main.content a {
   color: var(--gs-link);
-  text-decoration: none;
-  transition: color 0.12s ease;
-  /* 長い論文タイトルが枠外に飛び出さないように */
+  text-decoration: underline;
   overflow-wrap: break-word;
 }
 
 main.content a:hover,
 main.content a:focus {
-  color: var(--gs-link-hover);
+  color: var(--gs-link);
   text-decoration: underline;
 }
 
@@ -236,7 +252,6 @@ main.content a:focus-visible {
   border-radius: 2px;
 }
 
-/* 外部リンクアイコンが出る設定の場合に備えて非表示 */
 .external-link-icon,
 a.external::after {
   display: none !important;
@@ -250,20 +265,17 @@ a.external::after {
   :root {
     --hero-height: var(--hero-height-sp);
     --hero-parallax: 60px;
+    --hero-title-size: 30px;
     --content-pad: 18px;
   }
 
   .hero-header {
     margin-bottom: 2rem;
   }
-
-  main.content li {
-    margin-bottom: 1rem;
-  }
 }
 
 /* ==========================================================
-   8. アクセシビリティ：モーションを減らす設定を尊重
+   8. アクセシビリティ
    ========================================================== */
 
 @media (prefers-reduced-motion: reduce) {
