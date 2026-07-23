@@ -1,0 +1,107 @@
+---
+pagetitle: "Yojiro Ito — Curriculum Vitae"
+format:
+  pdf:
+    documentclass: article
+    papersize: a4
+    fontsize: 11pt
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=0.7in
+      - right=0.7in
+    colorlinks: true
+    linkcolor: cvlink
+    urlcolor: cvlink
+    include-in-header:
+      text: |
+        \usepackage{enumitem}
+        \usepackage{titlesec}
+        \usepackage{parskip}
+        \usepackage{xcolor}
+
+        % リンク色はサイトのリンク色に合わせる
+        \definecolor{cvlink}{HTML}{006580}
+
+        % main.tex と同じ見出し書式
+        \titleformat{\section}{\Large\bfseries}{}{0em}{}
+        \titleformat{\subsection}[block]{\bfseries\MakeUppercase}{\thesubsection}{1em}{}
+        \titlespacing*{\subsection}{0pt}{1.5ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+---
+
+```{=latex}
+% ---------- 氏名 ----------
+\begin{center}
+\LARGE\textbf{Yojiro Ito}
+\end{center}
+
+% ---------- 連絡先（2段組） ----------
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+2-1-1, Nihonbashi-Hongokucho\\
+Chuo-ku, Tokyo, Japan
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+E-mail: \href{mailto:youjirou.itou@boj.or.jp}{youjirou.itou@boj.or.jp}\\
+\hspace*{3.2em} \href{mailto:yojirou0913@gmail.com}{yojirou0913@gmail.com}\\
+Homepage: \href{https://yojiroito.github.io/website/}{yojiroito.github.io/website}
+\end{minipage}
+
+\vspace{1em}
+```
+
+<!-- ===================================================================
+     以下「手書き区画」は CV にしか出ない情報です。
+     Web サイトと共有しないため YAML 化していません。直接編集してください。
+     =================================================================== -->
+
+# Current Position
+
+Economist, Economic and Financial Studies Division, Institute for Monetary and Economic Studies (IMES), Bank of Japan \hfill 2024--\hspace*{2em}
+
+# Previous Positions
+
+Economist, Research and Statistics Department, Bank of Japan \hfill 2022--2024\
+Economist, Economic and Financial Studies Division, IMES, Bank of Japan \hfill 2020--2021\
+Economist, Financial System and Bank Examination Department, Bank of Japan \hfill 2017--2020\
+Economist, Kobe Branch, Bank of Japan \hfill 2016--2017\
+Economist, Research and Statistics Department, Bank of Japan \hfill 2015--2016
+
+# Education
+
+Ph.D. student in Commerce (Economics concentration), Waseda University \hfill 2024--\hspace*{2em}\
+MSc in Economics (with Distinction), University College London \hfill 2021--2022\
+MEng in Communications and Computer Engineering, Tokyo Institute of Technology \hfill 2013--2015\
+BEng in Computer Science, Tokyo Institute of Technology \hfill 2009--2013
+
+# Research
+
+<!-- ===================================================================
+     ここから下は data/research.yml から自動生成される区画です。
+     直接編集せず、data/research.yml を編集してください。
+     =================================================================== -->
+
+## Publications
+
+{{< include _generated/publications-cv.md >}}
+
+\vspace{0.4em}
+
+## Working Papers
+
+{{< include _generated/working-papers-cv.md >}}
+
+\vspace{0.4em}
+
+## Works in Progress
+
+{{< include _generated/works-in-progress-cv.md >}}
+
+<!-- ===================================================================
+     ここから再び手書き区画（Web サイトには出ない情報）
+     =================================================================== -->
+
+# Research Projects
+
+Project Member, "Firm Dynamics and Business Dynamism in Japan," Research Institute of Economy, Trade and Industry (RIETI) \hfill 2026--\hspace*{2em}
