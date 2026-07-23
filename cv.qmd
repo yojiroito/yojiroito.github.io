@@ -45,7 +45,7 @@ Chuo-ku, Tokyo, Japan
 \begin{minipage}[t]{0.48\textwidth}
 E-mail: \href{mailto:youjirou.itou@boj.or.jp}{youjirou.itou@boj.or.jp}\\
 \hspace*{3.2em} \href{mailto:yojirou0913@gmail.com}{yojirou0913@gmail.com}\\
-Homepage: \href{https://yojiroito.github.io/website/}{yojiroito.github.io/website}
+Homepage: \href{https://yojiroito.github.io/}{yojiroito.github.io}
 \end{minipage}
 
 \vspace{1em}
