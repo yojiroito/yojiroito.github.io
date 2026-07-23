@@ -8,6 +8,7 @@ project:
 
 website:
   title: "Yojiro Ito"
+  site-url: "https://yojiroito.github.io/"
   description: "Yojiro Ito — economist at the Bank of Japan, Ph.D. student at Waseda University."
   search: false
   page-navigation: false
@@ -27,5 +28,3 @@ format:
           <link rel="preconnect" href="https://fonts.googleapis.com">
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
           <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-
-site-url: "https://yojiroito.github.io/"
