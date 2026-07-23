@@ -1,0 +1,96 @@
+# =====================================================================
+#  research.yml — 論文リストの唯一の管理元 (single source of truth)
+#  ここを編集すると Web サイトと CV の両方が自動で更新されます。
+# ---------------------------------------------------------------------
+#  使えるフィールド（すべて任意。不要なものは行ごと省略可）
+#    title         : 論文タイトル（必須）
+#    coauthors     : 共著者のリスト。単著なら省略
+#    url           : リンク先。DOI 推奨。無ければ省略（リンクなしで出力）
+#    outlet        : 掲載誌名。斜体で出力される
+#    series        : WP シリーズ名など。斜体にしない
+#    details       : 巻号・ページ・論文番号など
+#    year          : 発表年
+#    note          : "Revise and Resubmit" などの補足
+#    presentations : 学会報告のリスト
+# ---------------------------------------------------------------------
+#  注意: 全角コロン「：」ではなく半角コロン「:」を使ってください。
+#        タイトルに「:」が含まれる場合は必ず " " で囲ってください。
+# =====================================================================
+
+publications:
+  - title: "Active but Hasty? CEO Age, Ownership Structure, and the Quantity–Quality Trade-off in Investment"
+    coauthors: ["Daisuke Miyakawa"]
+    url: "https://doi.org/10.1016/j.frl.2026.110499"
+    outlet: "Finance Research Letters"
+    details: "Vol. 109, 110499"
+    year: 2026
+
+  - title: "The Impact of Mergers on Aggregate Productivity: An Empirical Analysis Using Productivity Decomposition"
+    coauthors: ["Daisuke Miyakawa"]
+    url: "https://doi.org/10.1093/icc/dtaf032"
+    outlet: "Industrial and Corporate Change"
+    details: "Vol. 35, No. 3, pp. 543–578"
+    year: 2026
+
+working_papers:
+  - title: "Supply Shocks and Inflationary Pressures in Global Value Chains: The Role of Network Centrality"
+    coauthors: ["Harumasa Shirakawa"]
+    presentations:
+      - "BOK/ERI–BOJ/IMES Joint Research Workshop 2026"
+      - "ESCoE Conference on Economic Measurement 2026"
+      - "Japanese Economic Association Spring Meeting 2026"
+      - "North American Summer Meeting of the Econometric Society 2026"
+      - "Federal Reserve Bank of Cleveland RISE Conference 2026 (scheduled)"
+      - "Bank of Canada–Philadelphia Fed–Bank of Japan Joint Workshop (scheduled)"
+
+  - title: "Product and Process Innovation: Determinants and Dynamic Effects on Firm Growth"
+    coauthors: ["Harumasa Shirakawa"]
+    url: "https://www.imes.boj.or.jp/research/papers/english/25-E-18.pdf"
+    series: "IMES Discussion Paper Series No. 2025-E-18"
+    year: 2025
+    presentations:
+      - "Econometric Society World Congress 2025"
+      - "CEBRA Annual Meeting 2025"
+
+  - title: "Potential Growth in Japan: Issues on Its Relationship with Prices and Wages"
+    coauthors: ["Ichiro Fukunaga", "Yoshihiko Hogen", "Kenji Kanai", "Satoshi Tsuchida"]
+    url: "https://www.boj.or.jp/en/research/wps_rev/wps_2024/data/wp24e16.pdf"
+    series: "Bank of Japan Working Paper Series No. 24-E-16"
+    year: 2024
+
+  - title: "Determinants of Price Markups at Japanese Firms and Implications for Productivity"
+    coauthors: ["Kosuke Aoki", "Yoshihiko Hogen", "Kenji Kanai", "Kosuke Takatomi"]
+    url: "https://www.boj.or.jp/en/research/wps_rev/wps_2024/data/wp24e15.pdf"
+    series: "Bank of Japan Working Paper Series No. 24-E-15"
+    year: 2024
+
+  - title: "Changes in the Global Economic Landscape and Issues for Japan's Economy"
+    coauthors: ["Yoshihiko Hogen", "Kenji Kanai", "Naoya Kishi"]
+    url: "https://www.boj.or.jp/en/research/wps_rev/wps_2024/data/wp24e03.pdf"
+    series: "Bank of Japan Working Paper Series No. 24-E-3"
+    year: 2024
+
+  - title: "Pricing Patterns over Product Life-Cycle and Quality Growth at Product Turnover: Empirical Evidence from Japan"
+    coauthors: ["Nobuhiro Abe", "Ko Munakata", "Shinsuke Ohyama", "Kimiaki Shinozaki"]
+    url: "https://www.boj.or.jp/en/research/wps_rev/wps_2016/data/wp16e05.pdf"
+    series: "Bank of Japan Working Paper Series No. 16-E-5"
+    year: 2016
+
+works_in_progress:
+  - title: "Merger Patterns, Costly Exit, and Aggregate Implications"
+    presentations:
+      - "Japanese Economic Association Spring Meeting 2025"
+      - "IWH-CompNet Workshop on Firm Dynamism in Japan 2025"
+
+  - title: "Managing Across Firms: Span of Control in CEO-Firm Networks"
+    coauthors: ["Daisuke Miyakawa"]
+
+  - title: "Importing Shortages, Exporting Inflation: Evidence from Shipment-Level Trade Data"
+    coauthors: ["Daisuke Miyakawa"]
+
+  - title: "Employment Protection and the Direction of Innovation"
+    coauthors: ["Mitsuru Katagiri", "Koki Oikawa"]
+
+  - title: "Price Rigidity or Cost Dormancy? Firm-Level Evidence on the Phillips Curve"
+
+  - title: "A Global Panel of Trade Elasticities: Product-Level Estimates from Supply Shifters"
